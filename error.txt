@@ -1,0 +1,40 @@
+Loaded driving log data of length  8036
+Split driving log into Training data and Validation data
+Length of Training Data  6830
+Length of Validation Data  1206
+Training model for shape :  (160, 320, 3)
+Epoch 1/10
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "H:\Anaconda3\lib\threading.py", line 914, in _bootstrap_inner
+    self.run()
+  File "H:\Anaconda3\lib\threading.py", line 862, in run
+    self._target(*self._args, **self._kwargs)
+  File "H:\Anaconda3\lib\site-packages\keras\engine\training.py", line 429, in d
+ata_generator_task
+    generator_output = next(self._generator)
+  File "model.py", line 67, in generate_samples
+    image, measurement = get_image_and_measurement(i, data)
+  File "model.py", line 54, in get_image_and_measurement
+    image = imread(data[image_orientations[random_index]][index])
+  File "H:\Anaconda3\lib\site-packages\scipy\misc\pilutil.py", line 156, in imre
+ad
+    im = Image.open(name)
+  File "H:\Anaconda3\lib\site-packages\PIL\Image.py", line 2410, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: ' IMG/left_2016_12_01_13
+_44_25_436.jpg'
+
+Traceback (most recent call last):
+  File "model.py", line 148, in <module>
+    train(params)
+  File "model.py", line 122, in train
+    verbose = params['verbose'])
+  File "H:\Anaconda3\lib\site-packages\keras\models.py", line 935, in fit_genera
+tor
+    initial_epoch=initial_epoch)
+  File "H:\Anaconda3\lib\site-packages\keras\engine\training.py", line 1528, in
+fit_generator
+    str(generator_output))
+ValueError: output of generator should be a tuple (x, y, sample_weight) or (x, y
+). Found: None
